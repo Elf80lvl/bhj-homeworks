@@ -6,8 +6,8 @@ const ElemClose = document.getElementsByClassName('modal__close');
 for (let i = 0; i < ElemClose.length; i++) {
   ElemClose[i].onclick = function() {
     const modals = document.getElementsByClassName('modal')
-    for (let i = 0; i < modals.length; i++) {
-      modals[i].classList.remove('modal_active')
+    for (let j = 0; j < modals.length; j++) {
+      modals[j].classList.remove('modal_active')
     } 
   }
 }
@@ -15,7 +15,9 @@ for (let i = 0; i < ElemClose.length; i++) {
 //По нажатию на элемент с классом show-success покажите окно #modal_success
 success = document.getElementsByClassName('show-success');
 success[0].onclick = function() {
+  document.getElementById('modal_main').classList.remove('modal_active');
   document.getElementById('modal_success').classList.add('modal_active');
+
 }
 
 
