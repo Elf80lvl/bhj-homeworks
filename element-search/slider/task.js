@@ -13,8 +13,9 @@ next[0].onclick = function(){
     items[0].classList.add('slider__item_active');
     counter = 0;
   } else {
-    items[counter - 1].classList.remove('slider__item_active');
-    items[counter].classList.add('slider__item_active');
+    showNextSlide(counter, -1);
+    // items[counter - 1].classList.remove('slider__item_active');
+    // items[counter].classList.add('slider__item_active');
   }
 }
 
@@ -26,9 +27,15 @@ prev[0].onclick = function(){
     items[items.length - 1].classList.add('slider__item_active');
     counter = items.length - 1;
   } else {
-    items[counter + 1].classList.remove('slider__item_active');
-    items[counter].classList.add('slider__item_active');
+    showNextSlide(counter, 1);
+    // items[counter + 1].classList.remove('slider__item_active');
+    // items[counter].classList.add('slider__item_active');
   }
+}
+
+function showNextSlide(counter, k){
+  items[counter + k].classList.remove('slider__item_active');
+  items[counter].classList.add('slider__item_active');
 }
 
 // next[0].onclick = function(){
