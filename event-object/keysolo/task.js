@@ -25,8 +25,8 @@ class Game {
       При неправильном вводе символа - this.fail();
      */
 
-    window.addEventListener('keydown', (event) => {
-      if (this.currentSymbol.textContent === event.key) {
+    window.addEventListener('keypress', (event) => {
+      if (this.currentSymbol.textContent === event.key.toString().toLowerCase()) {
         this.success();
       } else this.fail(); 
     });
