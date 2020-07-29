@@ -26,11 +26,10 @@ class Game {
      */
 
     window.addEventListener('keypress', (event) => {
-      if (this.currentSymbol.textContent === event.key.toString().toLowerCase()) {
+      if (this.currentSymbol.textContent === event.key.toLowerCase()) {
         this.success();
       } else this.fail(); 
     });
-
   }
 
   success() {
