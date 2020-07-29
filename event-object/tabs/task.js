@@ -6,21 +6,17 @@ tabs.forEach(function(elem) {
 });
 
 function tabClick(){
-  resetTabs();
+  reset();
   this.classList.toggle('tab_active');
   const index = [...this.parentElement.children].indexOf(this); //боже, храни stackoverflow
-  resetContent();
   contentTabs[index].classList.add('tab__content_active');
 }
 
-function resetTabs() {
-  tabs.forEach(function(elem) {
-    elem.classList.remove('tab_active');
-  });
-}
-
-function resetContent() {
+function reset() {
   contentTabs.forEach(function(elem) {
     elem.classList.remove('tab__content_active');
+  });
+  tabs.forEach(function(elem) {
+    elem.classList.remove('tab_active');
   });
 }
