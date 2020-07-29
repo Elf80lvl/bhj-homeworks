@@ -8,8 +8,7 @@ tabs.forEach(function(elem) {
 function tabClick(){
   reset();
   this.classList.toggle('tab_active');
-  const index = [...this.parentElement.children].indexOf(this); //боже, храни stackoverflow
-  contentTabs[index].classList.add('tab__content_active');
+  contentTabs[tabs.indexOf(this)].classList.add('tab__content_active');
 }
 
 function reset() {
