@@ -21,14 +21,11 @@ function rotator(){
     activeElement.nextElementSibling.classList.add(classActivator);
     activeElement.classList.remove(classActivator);
     speed = activeElement.nextElementSibling.dataset['speed']; //скорость следующего элемента
-    //console.log('next speed: ', speed);
-    clearTimeout(id);
     setTimeout(rotator, speed);
   } else {
     elements[0].classList.add(classActivator);
     activeElement.classList.remove(classActivator);
     speed = elements[0].dataset['speed']; //скорость следующего элемента = скорость первого элемента, т.к. переходим в начало
-    clearTimeout(id);
     setTimeout(rotator, speed);
   }
 
