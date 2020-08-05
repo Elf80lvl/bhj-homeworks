@@ -54,7 +54,7 @@ input.addEventListener('keyup', function(e){
     //Реализуйте автоматическую прокрутку окна чата до блока последнего комментария после каждого нового комментария
     messages.lastElementChild.scrollIntoView();
     //При активном окне чата и простое 30 секунд, робот должен задать вопрос в чат
-    id = setTimeout(botAnnoying, 5000);
+    id = setTimeout(botAnnoying, 30000);
   }//end of if
 
 });
