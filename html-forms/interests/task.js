@@ -9,9 +9,7 @@ checkboxes.forEach(function(elem){
 
 
 function inputClick(){
-  //console.log(  this.closest('.interest').querySelector('.interests_active').querySelectorAll('.interest__check')  )
   children = Array.from( this.closest('.interest').querySelector('.interests_active').querySelectorAll('.interest__check'));
-  //console.log(children)
   if (this.checked) {
     children.forEach((el) => {
       el.checked = true;
@@ -21,16 +19,10 @@ function inputClick(){
       el.checked = false;
     })
   }
-
-  
-
 }
 
 
-
-
-
-
+//не смотрите этот кошмар
 
 // function inputClick(){
 //   //cчитаем сколько чекбоксов было чекнуто
