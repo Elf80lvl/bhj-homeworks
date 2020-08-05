@@ -31,6 +31,11 @@ prev[0].onclick = function(){
   }
 }
 
+// function nenavizhuetozadanie(collection, position, k){
+//   collection[position + 1].classList.remove('slider__item_active');
+//   collection[position].classList.add('slider__item_active');
+// }
+
 // next[0].onclick = function(){
 //   counter = counter + 1;
 //   active = document.getElementsByClassName('slider__item_active');
