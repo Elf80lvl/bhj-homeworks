@@ -81,13 +81,28 @@ class Autocomplete {
         value: 'Содержимое атрибута value'
       }
     */
-    return [
-      {
-        text: 'Чубакка',
-        value: '1'
-      }
-    ];
-  }
+
+   let arr = [];
+   //формируем массив из опций
+   for (let option of this.input) {
+     arr.push( {text: option.text, value: option.value} );
+   }
+   //отбираем совпадающие результаты, Подходящие опции - те, чей текст содержит то, что есть в аргументе text
+   arr = arr.filter( (option) => option.text.toLowerCase().includes(text.toLowerCase()) );
+   return arr;
+ }
 }
+
+
+
+
+//     return [
+//       {
+//         text: this.input.options,
+//         value: '1'
+//       }
+//     ];
+//   }
+// }
 
 new Autocomplete( document.querySelector( '.autocomplete' ));

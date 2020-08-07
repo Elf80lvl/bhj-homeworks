@@ -32,15 +32,12 @@ function showPrevSlide(){
   }
 }
 
-function showSlide(counter, k){
-  items[counter + k].classList.remove('slider__item_active');
-  items[counter].classList.add('slider__item_active');
-}
+// function nenavizhuetozadanie(collection, position, k){
+//   collection[position + 1].classList.remove('slider__item_active');
+//   collection[position].classList.add('slider__item_active');
+// }
 
-
-// Александр, здравствуйте. Я же вам написал, что у вас не всё управление перенесено в слайдер, у вас в случае истиного условия вы слайдером управляете из самого обработчика. Вот таким подходом:
-
-// function showNextSlide () {
+// next[0].onclick = function(){
 //   counter = counter + 1;
 //   if (counter >= items.length) {
 //     counter = 0;
