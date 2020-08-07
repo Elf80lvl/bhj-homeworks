@@ -7,16 +7,19 @@ let placeTasks;
 
 form.addEventListener('submit', submitForm);
 
+
 function submitForm() {
   event.preventDefault();
+
   //добавляем таск в массив
   if (input.value) {
     tasks.push(input.value);
     updateTasks(tasks);
+    form.reset();
   }
 }
 
-function updateTasks() {
+function updateTasks(tasks) {
   placeTasks = '';
   //добавляем таск в DOM
   for (let i = 0; i < tasks.length; i++) {
@@ -36,10 +39,12 @@ function updateTasks() {
   const removeIcons = Array.from(document.getElementsByClassName('task__remove'));
   removeIcons.forEach((el) => {
     el.addEventListener('click', function(){
-      this.parentElement.remove(); //удаляем таск из DOM
       tasks.splice(this.parentElement.dataset['id'], 1); //удаляем таск из массива
+      this.parentElement.remove(); //удаляем таск из DOM
     })
   })
-
 }
+
+
+
 
