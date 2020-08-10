@@ -31,21 +31,11 @@ buttonsAdd.forEach((el) => {
 });
 
 function buttonClick() {
-  //console.log(cart);
   id = this.closest('.product').dataset.id;
   quantity = parseInt(this.closest('.product__quantity').querySelector('.product__quantity-value').textContent);
   imgsrc = this.closest('.product').querySelector('.product__image').getAttribute('src');
-  
-  //console.log('id: ', id);
-  // console.log('quantity: ', quantity);
-  // console.log(imgsrc);
 
   products = Array.from(document.querySelectorAll('.cart__product'));
-  //console.log('products before adding: ', products);
-  //console.log(products[0]);
-
-  //не пустая ли корзина и есть ли уже такой товар
-  //if ( products.length != 0) {
     products.forEach((el) => {
       if (el.dataset.id == id) {
         //добавляем число к товару который уже в корзине
@@ -53,15 +43,10 @@ function buttonClick() {
         console.log(el)
         el.parentNode.children[el.parentNode.children - 1].remove();
       }
-
-
   })
-//}
 
-addTheProductToCart();
+if (quantity > 0) addTheProductToCart();
 products = Array.from(document.querySelectorAll('.cart__product'));
-//console.log('products after adding: ', products);
-
 }//enf of function
 
 
@@ -73,21 +58,4 @@ function addTheProductToCart() {
     <div class="cart__product-count">${quantity}</div>
   </div>
   `
-  //console.log('товар добавлен');
 }
-
-
-// function isProductInCart(el){
-//   products.forEach(el => {
-//     if (el.dataset.id == id) {
-//       return true
-//     }
-//   })
-// }
-
-    
-
-
-
-
-
