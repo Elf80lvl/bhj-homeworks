@@ -6,24 +6,18 @@ let id, quantity, imgsrc, products;
 
 //При нажатии на кнопки увеличения/уменьшения количества товаров, число должно также меняться. Минимальное число товаров - 1 (отрицательные значения не допускаются)
 minusButton.forEach((el) => {
-  el.addEventListener('click', minusOne);
+  el.addEventListener('click', function () {
+    if (this.parentNode.querySelector('.product__quantity-value').textContent > 0){
+      this.parentNode.querySelector('.product__quantity-value').textContent -= 1;
+    }
+  });
 });
 
 plusButton.forEach((el) => {
-  el.addEventListener('click', plusOne);
+  el.addEventListener('click', function(){
+    this.parentNode.querySelector('.product__quantity-value').textContent  = parseInt(this.parentNode.querySelector('.product__quantity-value').textContent) + 1;
+  });
 });
-
-
-function minusOne() {
-  if (this.parentNode.querySelector('.product__quantity-value').textContent > 0){
-    this.parentNode.querySelector('.product__quantity-value').textContent -= 1;
-  }
-}
-
-
-function plusOne() {
-  this.parentNode.querySelector('.product__quantity-value').textContent  = parseInt(this.parentNode.querySelector('.product__quantity-value').textContent) + 1;
-}
 
 
 //кнопки добавить в корзину
