@@ -9,10 +9,8 @@ function submitForm(){
   let file = document.getElementById('file').files[0];
   let xhr = new XMLHttpRequest();
   xhr.open('POST', 'https://netology-slow-rest.herokuapp.com/upload.php', true);
-
   //Form Object
   let formData = new FormData();
-
   //progress
   xhr.upload.onprogress = function(event) {
     progress.max = event.total;
@@ -20,7 +18,8 @@ function submitForm(){
   }
 
   formData.append('file', file);
-  //request
+
+  //go
   xhr.send(formData);
   console.log(file);
 }
