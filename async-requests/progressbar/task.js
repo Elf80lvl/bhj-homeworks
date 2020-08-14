@@ -6,7 +6,7 @@ form.addEventListener('submit', submitForm);
 function submitForm(){
   event.preventDefault();
   //file
-  let file = document.getElementById('file').files[0];
+  //let file = document.getElementById('file').files[0];
   let xhr = new XMLHttpRequest();
   xhr.open('POST', 'https://netology-slow-rest.herokuapp.com/upload.php', true);
   //Form Object
