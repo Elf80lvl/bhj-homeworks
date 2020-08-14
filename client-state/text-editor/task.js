@@ -3,13 +3,14 @@ if (localStorage.text) {
 }
 
 
-document.getElementById('save').addEventListener('click', () => {
-  localStorage.setItem('text', document.getElementById('editor').value);
+document.getElementById('editor').addEventListener('keyup', function() {
+  localStorage.text = this.value;
 })
 
 
 document.getElementById('delete').addEventListener('click', () => {
   document.getElementById('editor').value = '';
+  localStorage.removeItem('text');
 })
 
 
