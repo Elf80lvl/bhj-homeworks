@@ -1,5 +1,4 @@
 const checkboxes = Array.from(document.querySelectorAll('.interest__check'));
-let parentCheckbox;
 let children;
 
 
@@ -22,8 +21,8 @@ function inputClick(){
 }
 
 
-//не смотрите этот кошмар
 
+//let parentCheckbox;
 // function inputClick(){
 //   //cчитаем сколько чекбоксов было чекнуто
 //   counterOfChecked = this.closest('.interests').querySelectorAll('.interest__check:checked').length;
